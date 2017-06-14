@@ -6,7 +6,7 @@
 #    By: pbernier <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/21 03:19:16 by pbernier          #+#    #+#              #
-#    Updated: 2017/06/13 08:59:48 by rlecart          ###   ########.fr        #
+#    Updated: 2017/06/14 13:00:07 by rlecart          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,7 @@ SRC			=	ft_putstr.c \
 				ft_uppercase.c
 OBJ			=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra -I includes/
+CFLAGS		=	-Wall -Werror -Wextra -I includes/ -O2 -Ofast
 
 WHITE		=	\033[7;49;39m
 BLUE		=	\033[7;49;34m

@@ -6,7 +6,7 @@
 #    By: rlecart <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/29 00:43:30 by rlecart           #+#    #+#              #
-#    Updated: 2017/06/14 11:09:46 by rlecart          ###   ########.fr        #
+#    Updated: 2017/06/14 13:08:16 by rlecart          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ $(BINDIR)%.o: $(SRCDIR)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 mlx:
+	@printf "$(YELLOW)[MINILIBX] Compiling bin...                                 \r$(NO_COLOR)"
 	@make -s -C minilibx_macos
 
 lib:

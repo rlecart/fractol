@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 03:04:09 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/14 09:55:47 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/14 13:09:17 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		main(int argc, char **argv)
 		ft_putstr("usage ./fractol param\n");
 		ft_putstr("- Mandelbrot\n");
 		ft_putstr("- Julia\n");
-		ft_putstr("- burningship\n");
+		ft_putstr("- Burningship\n");
 		ft_putstr("- Menu\n");
 		ft_putstr("- Settings\n");
 		return (-1);

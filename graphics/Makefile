@@ -6,7 +6,7 @@
 #    By: rlecart <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/19 15:16:35 by rlecart           #+#    #+#              #
-#    Updated: 2017/06/13 08:39:22 by rlecart          ###   ########.fr        #
+#    Updated: 2017/06/14 12:59:50 by rlecart          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC			=	drawline.c \
 				print.c
 OBJ			=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra -I includes/
+CFLAGS		=	-Wall -Werror -Wextra -I includes/ -O2 -Ofast
 
 WHITE		=	\033[7;49;39m
 BLUE		=	\033[7;49;34m
