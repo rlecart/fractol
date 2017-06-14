@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 15:20:07 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/09 05:42:13 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/14 11:17:51 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 
 # define ESC 53
 # define BACKSPACE 51
+# define SPACE 49
+# define ENTER 36
 # define KEY_1 18
 # define KEY_2 19
 # define KEY_3 20

@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 03:43:40 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/09 13:59:23 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/14 10:15:38 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ void	init_julia(t_julia *j, void *mlx)
 	j->y2 = 1.2;
 	j->pom = 1;
 	j->imax = 150;
+	j->c_r = 0.285;
+	j->c_i = 0.01;
+	j->motion = 0;
 	find_ratio_j(j, 240, 240);
 	j->zoomx = j->image_x / (j->x2 - j->x1);
 	j->zoomy = j->image_y / (j->y2 - j->y1);
@@ -51,19 +54,20 @@ void	init_julia(t_julia *j, void *mlx)
 	j->img = mlx_get_data_addr(j->data, &i, &i, &i);
 }
 
-void	init_buddhabrot(t_buddhabrot *b, void *mlx)
+void	init_burningship(t_burningship *b, void *mlx)
 {
 	int		i;
 
 	b->win = NULL;
 	b->pix = get_color(255, 255, 255, 0);
-	b->x1 = -2.1;
-	b->x2 = 0.6;
-	b->y1 = -1.2;
-	b->y2 = 1.2;
+	b->zoom = 100;
+	b->x1 = -2.0;
+	b->x2 = 0.5;
+	b->y1 = -1.1;
+	b->y2 = 1.1;
 	b->pom = 1;
-	b->imax = 150;
-	find_ratio_b(b, 240, 240);
+	b->imax = 50.0;
+	find_ratio_b(b, 270, 240);
 	b->zoomx = b->image_x / (b->x2 - b->x1);
 	b->zoomy = b->image_y / (b->y2 - b->y1);
 	b->data = mlx_new_image(mlx, b->image_x, b->image_y);
@@ -136,5 +140,5 @@ void	init(t_menu *men)
 	init_menu_settings(men);
 	init_mandelbrot(&men->m, men->mlx);
 	init_julia(&men->j, men->mlx);
-	init_buddhabrot(&men->b, men->mlx);
+	init_burningship(&men->b, men->mlx);
 }

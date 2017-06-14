@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 03:36:49 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/08 20:55:42 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/14 09:55:47 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	menu(t_menu *men, int choice)
 	else if (choice == 2)
 		julia(men);
 	else if (choice == 3)
-		buddhabrot(men);
+		burningship(men);
 	else if (choice == 4)
 	{
 		men->win = mlx_new_window(men->mlx, 1024, 768, "Menu");

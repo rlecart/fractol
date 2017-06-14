@@ -6,7 +6,7 @@
 #    By: rlecart <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/29 00:43:30 by rlecart           #+#    #+#              #
-#    Updated: 2017/06/13 08:59:15 by rlecart          ###   ########.fr        #
+#    Updated: 2017/06/14 11:09:46 by rlecart          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,20 @@ SRC			=	main.c \
 				menu.c \
 				mandelbrot.c \
 				julia.c \
-				buddhabrot.c \
+				burningship.c \
 				menu_hook.c \
 				find_ratio.c \
 				settings.c \
-				settings_hook.c
+				settings_hook.c \
+				julia_hook.c \
+				burningship_hook.c \
+				mandelbrot_hook.c
 MINILIBX	=	minilibx_macos/libmlx.a
 LIBFT		=	libft/libft.a
 GRAPHICS	=	graphics/graphics.a
 OBJ			=	$(addprefix $(BINDIR),$(SRC:.c=.o))
 CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra -I includes/ -I libft/includes/ -I graphics/includes/
+CFLAGS		=	-Wall -Werror -Wextra -I includes/ -I libft/includes/ -I graphics/includes/ -O2 -Ofast
 MLXF		=	-framework OpenGL -framework AppKit
 
 WHITE		=	\033[7;49;39m
@@ -44,7 +47,7 @@ NO_COLOR	=	\033[m
 all: mlx lib gra $(NAME)
 
 $(NAME): $(MINILIBX) $(LIBFT) $(GRAPHICS) $(BINDIR) $(OBJ)
-	@printf "\r$(GREEN)[$(PROJECT)] Bin compilation done.                                 \n"
+	@printf "\r$(GREEN)[$(PROJECT)] Bin compilation done.                                    \n"
 	@printf "$(YELLOW)[$(PROJECT)] Compiling $(NAME)..."
 	@$(CC) $(CFLAGS) $(MLXF) -o $(NAME) $(OBJ) $(MINILIBX) $(LIBFT) $(GRAPHICS)
 	@printf "\r$(GREEN)[$(PROJECT)] Compilation done.                          \n$(NO_COLOR)"

@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:22:30 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/09 05:24:02 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/14 10:12:58 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	find_ratio_j(t_julia *j, int x, int y)
 	}
 }
 
-void	find_ratio_b(t_buddhabrot *b, int x, int y)
+void	find_ratio_b(t_burningship *b, int x, int y)
 {
 	long double	original;
 
