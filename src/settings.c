@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/05 22:58:08 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/09 05:00:34 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/14 17:53:21 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ void	settings(t_menu *men)
 	else
 		men->s.data = mlx_xpm_file_to_image(men->mlx, "img/xpm/set_bon.xpm", &i, &i);
 	mlx_put_image_to_window(men->mlx, men->s.win, men->s.data, 0, 0);
+	mlx_put_image_to_window(men->mlx, men->s.win, men->s.button, 374, 179);
+	mlx_put_image_to_window(men->mlx, men->s.win, men->s.colors, 50, 258);
+	mlx_put_image_to_window(men->mlx, men->s.win, men->s.first, 56, 439);
 	mlx_key_hook(men->s.win, key_hook_settings, men);
 	mlx_hook(men->s.win, 4, (1L << 2), mouse_hook_settings, men);
 	mlx_hook(men->s.win, 6, (1L << 6), mouse_motion_hook_settings, men);

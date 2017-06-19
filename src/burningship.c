@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 04:00:10 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/14 10:10:39 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:22:18 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	burningship(t_menu *men)
 	int		tmp[5];
 
 	if (!men->b.win)
-		men->b.win = mlx_new_window(men->mlx, men->b.image_x, men->b.image_y, "burningship");
+		men->b.win = mlx_new_window(men->mlx, men->b.image_x, men->b.image_y, "Burningship");
 	mlx_mouse_hook(men->b.win, mouse_hook_burningship, men);
 	mlx_key_hook(men->b.win, key_hook_burningship, men);
 	men->b.x = 0;

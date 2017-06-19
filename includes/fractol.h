@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 03:04:41 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/14 10:18:46 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:52:42 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,11 +106,16 @@ typedef struct		s_pal
 
 typedef struct		s_settings
 {
+	int				bolm;
+	int				bolj;
+	int				bolb;
 	int				choice;
 	t_pal			*pal;
-	char			*img;
 	void			*win;
 	void			*data;
+	void			*button;
+	void			*colors;
+	void			*first;
 }					t_settings;
 
 typedef struct		s_menu

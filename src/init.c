@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 03:43:40 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/14 10:15:38 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:52:39 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,15 @@ void	init_menu_settings(t_menu *men)
 
 	men->mlx = mlx_init();
 	men->win = NULL;
-	men->s.data = mlx_new_image(men->mlx, 1024, 768);
-	men->s.img = mlx_get_data_addr(men->s.data, &i, &i, &i);
 	men->s.win = NULL;
 	men->s.choice = 1;
+	men->s.bolm = 1;
+	men->s.bolj = 1;
+	men->s.bolb = 1;
+	//men->s.data = mlx_xpm_file_to_image(men->mlx, "img/xpm/set_mon.xpm", &i, &i);
+	men->s.button = mlx_xpm_file_to_image(men->mlx, "img/xpm/dis.xpm", &i, &i);
+	men->s.colors = mlx_xpm_file_to_image(men->mlx, "img/xpm/dis_cp.xpm", &i, &i);
+	men->s.first = mlx_xpm_file_to_image(men->mlx, "img/xpm/dis_bup.xpm", &i, &i);
 	if (!(men->s.pal = (t_pal*)malloc(sizeof(t_pal))))
 		exit(-1);
 	men->s.pal->col[0] = get_color(255, 51, 0, 0);

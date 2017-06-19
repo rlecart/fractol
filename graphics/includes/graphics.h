@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 15:20:07 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/14 11:17:51 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/20 00:03:29 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <math.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <mlx.h>
+# include "../../minilibx_macos/mlx.h"
 
 # define WIN_W 1024
 # define WIN_H 768
