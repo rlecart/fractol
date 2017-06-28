@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/05 23:18:59 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/20 00:16:16 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/28 04:13:00 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,12 +171,14 @@ int		key_hook_settings(int key, void *param)
 	{
 		if (men->s.choice < 3)
 			men->s.choice++;
+		mouse_hook_settings(1, 0, 0, men);
 		menu(men, 5);
 	}
 	else if (key == LEFT)
 	{
 		if (men->s.choice > 1)
 			men->s.choice--;
+		mouse_hook_settings(1, 0, 0, men);
 		menu(men, 5);
 	}
 	return (1);
