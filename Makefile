@@ -6,7 +6,7 @@
 #    By: rlecart <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/29 00:43:30 by rlecart           #+#    #+#              #
-#    Updated: 2017/06/14 13:08:16 by rlecart          ###   ########.fr        #
+#    Updated: 2017/06/29 00:30:58 by rlecart          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ BINDIR		=	bin/
 SRCDIR		=	src/
 SRC			=	main.c \
 				init.c \
+				init_colors.c \
 				menu.c \
 				mandelbrot.c \
 				julia.c \
@@ -24,6 +25,8 @@ SRC			=	main.c \
 				find_ratio.c \
 				settings.c \
 				settings_hook.c \
+				settings_tab.c \
+				settings_tab_motion.c \
 				julia_hook.c \
 				burningship_hook.c \
 				mandelbrot_hook.c
@@ -47,17 +50,17 @@ NO_COLOR	=	\033[m
 all: mlx lib gra $(NAME)
 
 $(NAME): $(MINILIBX) $(LIBFT) $(GRAPHICS) $(BINDIR) $(OBJ)
-	@printf "\r$(GREEN)[$(PROJECT)] Bin compilation done.                                    \n"
+	@printf "\r$(GREEN)[$(PROJECT)] Bin compilation done.                                                        \n"
 	@printf "$(YELLOW)[$(PROJECT)] Compiling $(NAME)..."
 	@$(CC) $(CFLAGS) $(MLXF) -o $(NAME) $(OBJ) $(MINILIBX) $(LIBFT) $(GRAPHICS)
 	@printf "\r$(GREEN)[$(PROJECT)] Compilation done.                          \n$(NO_COLOR)"
 
 $(BINDIR)%.o: $(SRCDIR)%.c
-	@printf "$(YELLOW)\r[$(PROJECT)] Compiling $< to $@                                      \r"
+	@printf "$(YELLOW)\r[$(PROJECT)] Compiling $< to $@                                                          \r"
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 mlx:
-	@printf "$(YELLOW)[MINILIBX] Compiling bin...                                 \r$(NO_COLOR)"
+	@printf "$(YELLOW)[MINILIBX] Compiling bin...                                                     \r$(NO_COLOR)"
 	@make -s -C minilibx_macos
 
 lib:
@@ -75,7 +78,7 @@ clean:
 	@printf "$(YELLOW)[$(PROJECT)] Removing bin..."
 	@rm -rf $(OBJ)
 	@rm -rf $(BINDIR)
-	@printf "\r$(GREEN)[$(PROJECT)] Bin removed.                               \n$(NO_COLOR)"
+	@printf "\r$(GREEN)[$(PROJECT)] Bin removed.                                                   \n$(NO_COLOR)"
 
 fclean:
 	@make -s -C minilibx_macos clean
@@ -84,10 +87,10 @@ fclean:
 	@printf "$(YELLOW)[$(PROJECT)] Removing bin..."
 	@rm -rf $(OBJ)
 	@rm -rf $(BINDIR)
-	@printf "\r$(GREEN)[$(PROJECT)] Bin removed.                               \n$(NO_COLOR)"
+	@printf "\r$(GREEN)[$(PROJECT)] Bin removed.                                                   \n$(NO_COLOR)"
 	@printf "$(YELLOW)[$(PROJECT)] Removing $(NAME)..."
 	@rm -rf $(NAME)
-	@printf "\r$(GREEN)[$(PROJECT)] $(NAME) removed.                           \n$(NO_COLOR)"
+	@printf "\r$(GREEN)[$(PROJECT)] $(NAME) removed.                                               \n$(NO_COLOR)"
 
 re: fclean all
 

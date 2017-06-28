@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 03:22:32 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/08 20:56:01 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/29 00:16:46 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ int		mouse_release_hook_menu(int b, int x, int y, void *param)
 	else if (b == 1 && x >= 530 && x <= 753 && y >= 566 && y <= 616 && (c = 6))
 		men->data = mlx_xpm_file_to_image(mlx, "img/xpm/menu_qov.xpm", &i, &i);
 	else
-	{
 		men->data = mlx_xpm_file_to_image(men->mlx, "img/xpm/menu.xpm", &i, &i);
-		c = 4;
-	}
 	mlx_put_image_to_window(men->mlx, men->win, men->data, 0, 0);
 	menu(men, c);
 	return (1);

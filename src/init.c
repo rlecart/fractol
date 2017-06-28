@@ -6,7 +6,7 @@
 /*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/12 03:43:40 by rlecart           #+#    #+#             */
-/*   Updated: 2017/06/20 00:52:39 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/06/28 23:09:46 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,67 +77,20 @@ void	init_burningship(t_burningship *b, void *mlx)
 void	init_menu_settings(t_menu *men)
 {
 	int		i;
+	void	*mlx;
 
 	men->mlx = mlx_init();
+	mlx = men->mlx;
 	men->win = NULL;
 	men->s.win = NULL;
 	men->s.choice = 1;
 	men->s.bolm = 1;
 	men->s.bolj = 1;
 	men->s.bolb = 1;
-	//men->s.data = mlx_xpm_file_to_image(men->mlx, "img/xpm/set_mon.xpm", &i, &i);
-	men->s.button = mlx_xpm_file_to_image(men->mlx, "img/xpm/dis.xpm", &i, &i);
-	men->s.colors = mlx_xpm_file_to_image(men->mlx, "img/xpm/dis_cp.xpm", &i, &i);
-	men->s.first = mlx_xpm_file_to_image(men->mlx, "img/xpm/dis_bup.xpm", &i, &i);
-	if (!(men->s.pal = (t_pal*)malloc(sizeof(t_pal))))
-		exit(-1);
-	men->s.pal->col[0] = get_color(255, 51, 0, 0);
-	men->s.pal->col[1] = get_color(255, 102, 0, 0);
-	men->s.pal->col[2] = get_color(255, 153, 0, 0);
-	men->s.pal->col[3] = get_color(255, 204, 0, 0);
-	men->s.pal->col[4] = get_color(255, 255, 0, 0);
-	men->s.pal->before = NULL;
-	if (!(men->s.pal->next = (t_pal*)malloc(sizeof(t_pal))))
-		exit(-1);
-	men->s.pal->next->col[0] = get_color(255, 0, 51, 0);
-	men->s.pal->next->col[1] = get_color(255, 0, 102, 0);
-	men->s.pal->next->col[2] = get_color(255, 0, 153, 0);
-	men->s.pal->next->col[3] = get_color(255, 0, 204, 0);
-	men->s.pal->next->col[4] = get_color(255, 0, 255, 0);
-	men->s.pal->next->before = men->s.pal;
-	if (!(men->s.pal->next->next = (t_pal*)malloc(sizeof(t_pal))))
-		exit(-1);
-	men->s.pal->next->next->col[0] = get_color(51, 0, 255, 0);
-	men->s.pal->next->next->col[1] = get_color(102, 0, 255, 0);
-	men->s.pal->next->next->col[2] = get_color(153, 0, 255, 0);
-	men->s.pal->next->next->col[3] = get_color(204, 0, 255, 0);
-	men->s.pal->next->next->col[4] = get_color(255, 0, 255, 0);
-	men->s.pal->next->next->before = men->s.pal->next;
-	if (!(men->s.pal->next->next->next = (t_pal*)malloc(sizeof(t_pal))))
-		exit(-1);
-	men->s.pal->next->next->next->col[0] = get_color(0, 51, 255, 0);
-	men->s.pal->next->next->next->col[1] = get_color(0, 102, 255, 0);
-	men->s.pal->next->next->next->col[2] = get_color(0, 153, 255, 0);
-	men->s.pal->next->next->next->col[3] = get_color(0, 204, 255, 0);
-	men->s.pal->next->next->next->col[4] = get_color(0, 255, 255, 0);
-	men->s.pal->next->next->next->before = men->s.pal->next->next;
-	if (!(men->s.pal->next->next->next->next = (t_pal*)malloc(sizeof(t_pal))))
-		exit(-1);
-	men->s.pal->next->next->next->next->col[0] = get_color(0, 255, 51, 0);
-	men->s.pal->next->next->next->next->col[1] = get_color(0, 255, 102, 0);
-	men->s.pal->next->next->next->next->col[2] = get_color(0, 255, 153, 0);
-	men->s.pal->next->next->next->next->col[3] = get_color(0, 255, 204, 0);
-	men->s.pal->next->next->next->next->col[4] = get_color(0, 255, 255, 0);
-	men->s.pal->next->next->next->next->before = men->s.pal->next->next->next;
-	if (!(men->s.pal->next->next->next->next->next = (t_pal*)malloc(sizeof(t_pal))))
-		exit(-1);
-	men->s.pal->next->next->next->next->next->col[0] = get_color(51, 255, 0, 0);
-	men->s.pal->next->next->next->next->next->col[1] = get_color(102, 255, 0, 0);
-	men->s.pal->next->next->next->next->next->col[2] = get_color(153, 255, 0, 0);
-	men->s.pal->next->next->next->next->next->col[3] = get_color(204, 255, 0, 0);
-	men->s.pal->next->next->next->next->next->col[4] = get_color(255, 255, 0, 0);
-	men->s.pal->next->next->next->next->next->before = men->s.pal->next->next->next->next;
-	men->s.pal->next->next->next->next->next->next = NULL;
+	men->s.button = mlx_xpm_file_to_image(mlx, "img/xpm/dis.xpm", &i, &i);
+	men->s.colors = mlx_xpm_file_to_image(mlx, "img/xpm/dis_cp.xpm", &i, &i);
+	men->s.first = mlx_xpm_file_to_image(mlx, "img/xpm/dis_bup.xpm", &i, &i);
+	init_color_one(men);
 }
 
 void	init(t_menu *men)
